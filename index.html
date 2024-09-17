@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sensor Data</title>
+    <script>
+        async function fetchData() {
+            const response = await fetch('http://your-username.pythonanywhere.com/data.txt');
+            const data = await response.text();
+            document.getElementById('data').textContent = data;
+        }
+        setInterval(fetchData, 60000); // Fetch data every minute
+    </script>
+</head>
+<body>
+    <h1>Sensor Data</h1>
+    <pre id="data">Loading...</pre>
+</body>
+</html>
